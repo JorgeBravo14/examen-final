@@ -1,0 +1,452 @@
+/* Estilos Generales y Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el ancho/alto */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #333; /* Color de texto principal */
+    background-color: #f4f4f4; /* Fondo suave para la página */
+}
+
+.contenedor {
+    width: 90%; /* Ancho del contenido principal */
+    max-width: 1200px; /* Ancho máximo para el contenido */
+    margin: auto; /* Centra el contenedor */
+    overflow: hidden; /* Limpia floats */
+    padding: 0 20px; /* Padding horizontal para evitar que el contenido toque los bordes */
+}
+
+.espaciado-seccion {
+    padding: 60px 0; /* Padding vertical para las secciones */
+}
+
+h1, h2, h3 {
+    color: #333; /* Color para los encabezados */
+    margin-bottom: 20px; /* Margen inferior para los encabezados */
+    text-align: center; /* Centra el texto de los encabezados */
+}
+
+h2 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #ff0000; /* Línea naranja debajo de los títulos de sección */
+    display: inline-block; /* Permite que el borde se ajuste al texto */
+    padding-bottom: 10px;
+    margin-left: auto; /* Centra el elemento inline-block */
+    margin-right: auto; /* Centra el elemento inline-block */
+}
+
+p {
+    margin-bottom: 20px; /* Margen inferior para los párrafos */
+}
+
+a {
+    color: #ff0000; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado por defecto */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Header y Navegación */
+header {
+    background: #333; /* Fondo oscuro para el encabezado */
+    color: #fff; /* Texto blanco en el encabezado */
+    padding: 1rem 0;
+    border-bottom: 5px solid #ff0000; /* Borde inferior naranja */
+}
+
+header .contenedor {
+    display: flex; /* Usa flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia el título y la navegación */
+    align-items: center; /* Alinea verticalmente los ítems */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 2em;
+}
+
+header nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Pone los ítems del menú en fila */
+}
+
+header nav ul li {
+    margin-left: 20px; /* Espacio entre los ítems del menú */
+}
+
+header nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+header nav ul li a:hover {
+    color: #ff0000; /* Color naranja al pasar el ratón */
+    text-decoration: none;
+}
+
+/* Carrusel (Sección Principal/Hero) */
+.carrusel-hero {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-carrusel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-carrusel {
+    display: none; /* Oculta los slides por defecto */
+    width: 100%;
+}
+
+.slide-carrusel img {
+    width: 100%;
+    height: 500px; /* Altura fija para las imágenes del carrusel */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.pie-carrusel {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 80%; /* Ancho máximo para la leyenda */
+}
+
+.pie-carrusel h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.pie-carrusel p {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+/* Botones de navegación del carrusel (flechas) */
+.anterior, .siguiente {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Centra verticalmente */
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Fondo semi-transparente para las flechas */
+}
+
+.siguiente {
+    right: 0; /* Flecha derecha al final */
+    border-radius: 3px 0 0 3px;
+}
+
+.anterior:hover, .siguiente:hover {
+    background-color: rgba(0,0,0,0.8); /* Fondo más oscuro al pasar el ratón */
+}
+
+/* Puntos de navegación del carrusel */
+.punto {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%; /* Hace los puntos circulares */
+    display: inline-block; /* Permite alinearlos horizontalmente */
+    transition: background-color 0.6s ease;
+}
+
+.activo, .punto:hover {
+    background-color: #ff0000; /* Color naranja para el punto activo o al pasar el ratón */
+}
+
+/* Animación de desvanecimiento para el carrusel */
+.desvanecer {
+    animation-name: desvanecer;
+    animation-duration: 1.5s;
+}
+
+@keyframes desvanecer {
+    from {opacity: .4} /* Opacidad inicial */
+    to {opacity: 1} /* Opacidad final */
+}
+
+/* Estilos de las Secciones Generales */
+section {
+    background-color: #fff; /* Fondo blanco para las secciones */
+    margin-bottom: 30px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Diseño de Tarjetas (Servicios) */
+.rejilla-3-columnas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    margin-top: 40px;
+}
+
+.tarjeta-servicio {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px); /* Efecto de levantar la tarjeta al pasar el ratón */
+}
+
+.tarjeta-servicio h3 {
+    color: #ff0000;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+/* Recomendaciones/Testimonios */
+.rejilla-testimonios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.tarjeta-testimonio {
+    background-color: #fff3e0; /* Fondo naranja claro */
+    padding: 25px;
+    border-left: 5px solid #ff0000; /* Borde izquierdo naranja */
+    border-radius: 8px;
+    font-style: italic; /* Texto en cursiva */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.tarjeta-testimonio p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.tarjeta-testimonio span {
+    display: block; /* Ocupa todo el ancho */
+    text-align: right; /* Alinea el nombre a la derecha */
+    font-weight: bold;
+    color: #555;
+}
+
+/* Sección de Alimentación */
+.columnas-contenido {
+    display: flex; /* Usa flexbox para las columnas */
+    flex-wrap: wrap; /* Permite que las columnas se envuelvan en pantallas pequeñas */
+    gap: 30px; /* Espacio entre columnas */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-top: 40px;
+}
+
+.columna-izquierda, .columna-derecha {
+    flex: 1; /* Permite que las columnas crezcan y se encojan */
+    min-width: 300px; /* Evita que las columnas se encojan demasiado */
+}
+
+.columna-derecha img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.columna-izquierda ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding-left: 0;
+}
+
+.columna-izquierda ul li {
+    /* Ícono personalizado para la lista */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23ff6600" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px; /* Espacio para el ícono */
+    margin-bottom: 10px;
+}
+
+/* Sección de Horario */
+.tabla-horario {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre bordes de celdas */
+    margin-top: 40px;
+}
+
+.tabla-horario th, .tabla-horario td {
+    border: 1px solid #ddd; /* Borde de las celdas */
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.tabla-horario th {
+    background-color: #ff0000; /* Fondo naranja para los encabezados de tabla */
+    color: white;
+    text-transform: uppercase;
+}
+
+.tabla-horario tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo alterno para filas */
+}
+
+.tabla-horario td ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tabla-horario td ul li {
+    margin-bottom: 5px;
+}
+
+/* Contacto y Mapa */
+.contenedor-mapa {
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 para el mapa */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.contenedor-mapa iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 5px solid #ff0000; /* Borde superior naranja */
+}
+
+footer .contenedor {
+    display: flex;
+    flex-direction: column; /* Apila elementos en el footer para pantallas pequeñas */
+    align-items: center;
+}
+
+.enlaces-sociales {
+    margin-top: 15px;
+}
+
+.icono-social {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.icono-social:hover {
+    background-color: #e00000; /* Color más oscuro al pasar el ratón */
+    text-decoration: none;
+}
+
+/* Adaptabilidad (Media Queries) */
+@media (max-width: 768px) {
+    header .contenedor {
+        flex-direction: column; /* Apila el título y la navegación */
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-direction: column; /* Apila los ítems del menú */
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0; /* Espacio vertical entre los ítems del menú */
+    }
+
+    .pie-carrusel h2 {
+        font-size: 1.5em;
+    }
+
+    .pie-carrusel p {
+        font-size: 0.9em;
+    }
+
+    .rejilla-3-columnas, .rejilla-testimonios, .columnas-contenido {
+        grid-template-columns: 1fr; /* Una sola columna para los grids */
+    }
+
+    .tabla-horario th, .tabla-horario td {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    .columna-izquierda, .columna-derecha {
+        min-width: unset; /* Reinicia el min-width para pantallas más pequeñas */
+        width: 100%; /* Las columnas ocupan todo el ancho */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .slide-carrusel img {
+        height: 300px; /* Reduce la altura de las imágenes del carrusel */
+    }
+
+    .pie-carrusel {
+        padding: 10px 15px;
+    }
+
+    .anterior, .siguiente {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .tarjeta-servicio, .tarjeta-testimonio {
+        padding: 20px;
+    }
+
+    footer .contenedor {
+        flex-direction: column;
+    }
+
+    .enlaces-sociales {
+        margin-top: 20px;
+    }
+}

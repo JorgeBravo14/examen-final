@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen Gym - Tu Mejor Versión en Puente Piedra</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <header>
+        <div class="contenedor">
+            <h1>Imagen Gym</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#recomendaciones">Recomendaciones</a></li>
+                    <li><a href="#alimentacion">Alimentación</a></li>
+                    <li><a href="#horario">Horario</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="seccion-inicio" class="carrusel-hero">
+            <div class="contenedor-carrusel">
+                <div class="slide-carrusel desvanecer">
+                    <img src="/img/entrada.jpg" alt="Gimnasio Imagen Gym - Entrada">
+                    <div class="pie-carrusel">
+                        <h2>¡Transforma tu cuerpo, transforma tu vida!</h2>
+                        <p>Ubicados en Puente Piedra, tu camino hacia una vida más saludable comienza aquí.</p>
+                    </div>
+                </div>
+                <div class="slide-carrusel desvanecer">
+                    <img src="/img/maquina1.jpg" alt="Gimnasio Imagen Gym - Zona de Pesas">
+                    <div class="pie-carrusel">
+                        <h2>Equipo de última generación y ambiente motivador</h2>
+                        <p>Contamos con las mejores máquinas y un espacio diseñado para tu comodidad.</p>
+                    </div>
+                </div>
+                <div class="slide-carrusel desvanecer">
+                    <img src="/img/clase de zumba.jpg" alt="Gimnasio Imagen Gym - Clase de Zumba">
+                    <div class="pie-carrusel">
+                        <h2>Clases dirigidas para todos los niveles y entrenadores expertos</h2>
+                        <p>Logra tus metas con la guía de profesionales altamente calificados.</p>
+                    </div>
+                </div>
+                <a class="anterior" onclick="cambiarSlides(-1)">❮</a>
+                <a class="siguiente" onclick="cambiarSlides(1)">❯</a>
+            </div>
+            <div style="text-align:center">
+                <span class="punto" onclick="mostrarSlide(1)"></span>
+                <span class="punto" onclick="mostrarSlide(2)"></span>
+                <span class="punto" onclick="mostrarSlide(3)"></span>
+            </div>
+        </section>
+
+        <section id="nosotros" class="contenedor espaciado-seccion">
+            <h2>Sobre Nosotros</h2>
+            <p><strong>Imagen Gym</strong> es tu gimnasio de confianza en Puente Piedra, comprometido con tu bienestar y tus objetivos de fitness. Ofrecemos un ambiente amigable, equipo moderno y una variedad de clases para que encuentres la rutina perfecta para ti. Nuestro equipo de entrenadores está dedicado a ayudarte a alcanzar tu mejor versión.</p>
+        </section>
+
+        <section id="servicios" class="contenedor espaciado-seccion">
+            <h2>Nuestros Servicios</h2>
+            <div class="rejilla-3-columnas">
+                <div class="tarjeta-servicio">
+                    <h3>Gimnasio Completo</h3>
+                    <p>Acceso a todas nuestras máquinas de cardio, pesas libres y equipos de fuerza.</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <h3>Clases Dirigidas</h3>
+                    <p>Zumba, spinning, yoga, funcional y más. ¡Diversión garantizada mientras te pones en forma!</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <h3>Entrenamiento Personalizado</h3>
+                    <p>Programas de entrenamiento a medida con el seguimiento de un entrenador personal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="recomendaciones" class="contenedor espaciado-seccion">
+            <h2>Recomendaciones de Nuestros Socios</h2>
+            <div class="rejilla-testimonios">
+                <div class="tarjeta-testimonio">
+                    <p>"Desde que me uní a Imagen Gym, he notado un cambio increíble en mi energía y mi estado físico. ¡Totalmente recomendado!"</p>
+                    <span>- María G.</span>
+                </div>
+                <div class="tarjeta-testimonio">
+                    <p>"El ambiente es genial y los entrenadores son muy profesionales. Me siento motivado cada vez que vengo."</p>
+                    <span>- Juan P.</span>
+                </div>
+                <div class="tarjeta-testimonio">
+                    <p>"Las clases de zumba son mis favoritas, ¡nunca me aburro! Imagen Gym es el mejor gimnasio de Puente Piedra."</p>
+                    <span>- Sofía L.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="alimentacion" class="contenedor espaciado-seccion">
+            <h2>Guía de Alimentación Saludable</h2>
+            <div class="columnas-contenido">
+                <div class="columna-izquierda">
+                    <h3>Consejos Básicos para una Nutrición Óptima</h3>
+                    <ul>
+                        <li>Consume una variedad de frutas y verduras.</li>
+                        <li>Prioriza proteínas magras (pollo, pescado, legumbres).</li>
+                        <li>Elige carbohidratos complejos (arroz integral, avena, quinoa).</li>
+                        <li>Mantente hidratado bebiendo suficiente agua.</li>
+                        <li>Evita el exceso de azúcares y grasas saturadas.</li>
+                    </ul>
+                </div>
+                <div class="columna-derecha">
+                    <img src="/img/alimento.jpg" alt="Alimentos Saludables y Nutrición">
+                </div>
+            </div>
+            <p>Recuerda que una buena alimentación es el complemento perfecto para tu rutina de ejercicios. Consulta siempre a un profesional para un plan personalizado.</p>
+        </section>
+
+        <section id="horario" class="contenedor espaciado-seccion">
+            <h2>Nuestro Horario</h2>
+            <table class="tabla-horario">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario</th>
+                        <th>Clases Especiales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes - Viernes</td>
+                        <td>6:00 AM - 10:00 PM</td>
+                        <td>
+                            <ul>
+                                <li>7:00 AM - Spinning</li>
+                                <li>9:00 AM - Funcional</li>
+                                <li>6:00 PM - Zumba</li>
+                                <li>7:00 PM - Yoga</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sábados</td>
+                        <td>8:00 AM - 2:00 PM</td>
+                        <td>
+                            <ul>
+                                <li>9:00 AM - Full Body</li>
+                                <li>11:00 AM - Box Fit</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Domingos</td>
+                        <td>Cerrado</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contacto" class="contenedor espaciado-seccion">
+            <h2>Contáctanos</h2>
+            <p>Estamos ubicados en Urb.Puente Piedra (Augusto Bedoya) Mz A Lote 13 _ Calle 8. (2do piso)
+, Puente Piedra, Peru, Lima 22. ¡Visítanos o contáctanos para más información!</p>
+            <p><strong>Teléfono:</strong> 910527973 </p>
+            <p><strong>Email:</strong> imagengymperu@hotmail.com </p>
+            <div class="contenedor-mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d701.3603890825588!2d-77.07389529413396!3d-11.867542920403213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d182ceca8d89%3A0x3f0a5c62de5620b5!2sIMAGEN%20GYM!5e0!3m2!1ses!2spe!4v1752711343785!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <p>© 2025 Imagen Gym. Todos los derechos reservados.</p>
+            <div class="enlaces-sociales">
+                <a href="#" class="icono-social">Facebook</a>
+                <a href="#" class="icono-social">Instagram</a>
+                <a href="#" class="icono-social">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let indiceSlide = 1; // Índice actual del slide
+        mostrarSlides(indiceSlide); // Muestra el primer slide al cargar la página
+
+        // Función para avanzar o retroceder slides
+        function cambiarSlides(n) {
+            mostrarSlides(indiceSlide += n);
+        }
+
+        // Función para mostrar un slide específico haciendo clic en los puntos
+        function mostrarSlide(n) {
+            mostrarSlides(indiceSlide = n);
+        }
+
+        // Lógica principal para mostrar los slides
+        function mostrarSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide-carrusel"); // Obtiene todos los slides
+            let puntos = document.getElementsByClassName("punto"); // Obtiene todos los puntos
+            if (n > slides.length) {indiceSlide = 1} // Si se excede el último slide, vuelve al primero
+            if (n < 1) {indiceSlide = slides.length} // Si se retrocede del primero, va al último
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; // Oculta todos los slides
+            }
+            for (i = 0; i < puntos.length; i++) {
+                puntos[i].className = puntos[i].className.replace(" activo", ""); // Elimina la clase 'activo' de todos los puntos
+            }
+            slides[indiceSlide-1].style.display = "block"; // Muestra el slide actual
+            puntos[indiceSlide-1].className += " activo"; // Añade la clase 'activo' al punto del slide actual
+        }
+
+        // Avance automático del carrusel (opcional, descomentar para activar)
+        // setInterval(() => {
+        //     cambiarSlides(1);
+        // }, 5000); // Cambia de imagen cada 5 segundos
+    </script>
+</body>
+</html>
